@@ -42,8 +42,12 @@ p {
 
 textarea {
     border: 1px solid grey;
-    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 30px;
+    min-height: 30px;
     padding: 20px;
     background-color: white;
     margin-top: 20px;
+    
 }

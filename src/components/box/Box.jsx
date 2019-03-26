@@ -8,6 +8,7 @@ class Box extends React.Component{
             edit: false,
             delete: false,
             save: false,
+            newtext: '',
         }
     }
 
@@ -23,9 +24,10 @@ class Box extends React.Component{
         })
     }
 
-    save = () => {
+    save = (e) => {
         this.setState({
             edit: false,
+            newtext: e.target.value,
         })
     }
 
@@ -44,10 +46,12 @@ class Box extends React.Component{
     renderEdit = () => {
         return (
             <div className='box'>
-                <textarea defaultValue={this.props.text}></textarea>
+                <textarea className="textarea" defaultValue={this.props.text}></textarea>
+                <p>{this.state.newtext}</p>
                 <div className='buttons'>
                     <button onClick={this.save} className='btnSave'>Save</button>
                 </div>
+                
             </div>
         )
     }
@@ -64,6 +68,5 @@ class Box extends React.Component{
         }
     }
 }
-
 
 export default Box
