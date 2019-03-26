@@ -1,0 +1,17 @@
+section{
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+#Info {
+    width: 50%;
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
