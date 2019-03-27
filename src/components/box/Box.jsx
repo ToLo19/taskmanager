@@ -1,14 +1,14 @@
-import React from 'react'
-import './Box.css'
+import React from 'react';
+import './Box.css';
 
 class Box extends React.Component{
-    constructor () {
+    constructor (props) {
         super();
         this.state = {
             edit: false,
             delete: false,
             save: false,
-            newtext: '',
+            text: props.text,
         }
     }
 
@@ -24,18 +24,22 @@ class Box extends React.Component{
         })
     }
 
-    save = (e) => {
+    saveText = (e) => {
+        this.setState({
+            text: e.target.value,
+        })
+    }
+
+    save = () => {
         this.setState({
             edit: false,
-            newtext: e.target.value,
         })
     }
 
     renderNorm = () => {
         return (
             <div className='box'>
-                <p>{this.props.text}</p>
-                <p>{this.state.newtext}</p>
+                <p>{this.state.text}</p>
                 <div className='buttons'>
                     <button onClick={this.edit} className='btnEdit'>Edit</button>
                     <button onClick={this.delete} className='btnDelete'>Delete</button>
@@ -47,8 +51,7 @@ class Box extends React.Component{
     renderEdit = () => {
         return (
             <div className="box">
-                <textarea className="textarea" defaultValue={this.props.text}></textarea>
-                
+                <textarea className="textarea" onChange={this.saveText} defaultValue={this.state.text}></textarea>
                 <div className="buttons">
                     <button onClick={this.save} className="btnSave">Save</button>
                 </div>

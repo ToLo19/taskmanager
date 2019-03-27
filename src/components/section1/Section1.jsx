@@ -7,9 +7,7 @@ class Section1 extends React.Component{
         return(    
             <section>
                 <div id='Info' >
-                    <Box text='Go shopping' />
-                    <Box text='Bring the milk' />
-                    <Box text='To cook a pie' />
+                    <Box text="some task" />
                 </div>
             </section>
         )
