@@ -35,6 +35,7 @@ class Box extends React.Component{
         return (
             <div className='box'>
                 <p>{this.props.text}</p>
+                <p>{this.state.newtext}</p>
                 <div className='buttons'>
                     <button onClick={this.edit} className='btnEdit'>Edit</button>
                     <button onClick={this.delete} className='btnDelete'>Delete</button>
@@ -45,13 +46,12 @@ class Box extends React.Component{
 
     renderEdit = () => {
         return (
-            <div className='box'>
+            <div className="box">
                 <textarea className="textarea" defaultValue={this.props.text}></textarea>
-                <p>{this.state.newtext}</p>
-                <div className='buttons'>
-                    <button onClick={this.save} className='btnSave'>Save</button>
-                </div>
                 
+                <div className="buttons">
+                    <button onClick={this.save} className="btnSave">Save</button>
+                </div>
             </div>
         )
     }
